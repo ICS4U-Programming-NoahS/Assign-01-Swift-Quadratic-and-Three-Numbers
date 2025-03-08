@@ -182,7 +182,7 @@ repeat {
 
         } catch InputError.invalidInput {
             // If user does not enter a number
-            print("Invalid choice.")
+            print("Invalid input. Enter a number next time.")
         }
 
     // If the user enters q to quit
