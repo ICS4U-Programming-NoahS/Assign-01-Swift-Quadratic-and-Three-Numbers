@@ -47,7 +47,7 @@ func calcQuadratic(numA: Double, numB: Double, numC: Double) -> String {
     } else {
         let solution1 = (-numB + sqrt(discriminant)) / (2 * numA)
         let solution2 = (-numB - sqrt(discriminant)) / (2 * numA)
-        calcQuadraticMessage = "x is equal to " + String(format: "%.2f", solution1) + " and " 
+        calcQuadraticMessage = "x is equal to " + String(format: "%.2f", solution1) + " and "
         + String(format: "%.2f", solution2) + "."
     }
 
