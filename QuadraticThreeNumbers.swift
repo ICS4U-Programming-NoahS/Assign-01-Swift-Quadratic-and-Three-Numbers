@@ -29,25 +29,26 @@ func calcQuadratic(numA: Double, numB: Double, numC: Double) -> String {
 
     // Check if the discriminant is negative
     let discriminant = pow(numB, 2) - (4 * numA * numC)
-    
+
     if discriminant < 0 {
         calcQuadraticMessage = "The discriminant is negative, no real solutions."
-        
+
     // Check if a is 0 
     } else if numA == 0 {
         calcQuadraticMessage = "a cannot be zero. Try again."
-        
+
     // Check if the discriminant is equal to 0
     } else if discriminant == 0 {
         // If this is true it will have 1 solution
-        let x = -numB / (2 * numA)
-        calcQuadraticMessage = "x is equal to" + String(format: "%.2f", x) + "x)."
-        
+        let solution = -numB / (2 * numA)
+        calcQuadraticMessage = "x is equal to" + String(format: "%.2f", solution) + "x)."
+
     // If there are 2 solutions
     } else {
-        let x1 = (-numB + sqrt(discriminant)) / (2 * numA)
-        let x2 = (-numB - sqrt(discriminant)) / (2 * numA)
-        calcQuadraticMessage = "x is equal to " + String(format: "%.2f", x1) + " and " + String(format: "%.2f", x2) + "."
+        let solution1 = (-numB + sqrt(discriminant)) / (2 * numA)
+        let solution2 = (-numB - sqrt(discriminant)) / (2 * numA)
+        calcQuadraticMessage = "x is equal to " + String(format: "%.2f", solution1) + " and " 
+        + String(format: "%.2f", solution2) + "."
     }
 
     // Return the solution(s) or error message
@@ -56,14 +57,14 @@ func calcQuadratic(numA: Double, numB: Double, numC: Double) -> String {
 
 // Function for the smallest number program.
 func smallestNumber(numA: Double, numB: Double, numC: Double) -> String {
-    
+
     // Initialize message
     var smallestNumberMessage = ""
 
     // Check if a is the smallest
     if numA < numB && numA < numC {
         smallestNumberMessage = "\(numA) is the smallest."
-    
+
     // Check if b is the smallest
     } else if numB < numA && numB < numC {
         smallestNumberMessage = "\(numB) is the smallest."
@@ -71,19 +72,19 @@ func smallestNumber(numA: Double, numB: Double, numC: Double) -> String {
     // Check if c is the smallest
     } else if numC < numA && numC < numB {
         smallestNumberMessage = "\(numC) is the smallest."
-    
+
     // Check if a and b are the smallest
     } else if numA == numB && numA < numC {
         smallestNumberMessage = "\(numA) and \(numB) are the smallest."
-    
+
     // Check if a and c are the smallest
     } else if numA == numC && numA < numB {
         smallestNumberMessage = "\(numA) and \(numC) are the smallest."
-    
+
     // Check if b and c are the smallest
     } else if numB == numC && numB < numA {
         smallestNumberMessage = "\(numB) and \(numC) are the smallest."
-    
+
     // Check if all are the same
     } else {
         smallestNumberMessage = "\(numA), \(numB), and \(numC) are the smallest."
@@ -111,7 +112,7 @@ repeat {
     // Get choice from user as string
     choice = readLine()!
 
-    // If the user's choice is 1 or 2'
+    // If the user's choice is 1 or 2
     if choice == "1" || choice == "2" {
         if choice == "1" {
             // Give instructions for quadratic equation program
@@ -150,7 +151,7 @@ repeat {
 
                             // Display the solutions of x or the error message
                             print(calcQuadraticMessage)
-                        
+
                         // If the user chooses program 2
                         } else if choice == "2" {
                             // Call the smallest number function
@@ -158,7 +159,7 @@ repeat {
 
                             // Display the smallest number(s)
                             print(smallestNumMessage)
-                        
+
                         // If the user enters an invalid choice
                         } else {
                             print("Invalid choice. Try again.")
